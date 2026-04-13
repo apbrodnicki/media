@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"types": [
+			"vite/client"
+		],
+	},
+	"include": [
+		"src/worker",
+		"src/shared",
+		"worker-configuration.d.ts"
+	],
+	"extends": "./tsconfig.node.json"
+}

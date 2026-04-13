@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+		"lib": [
+			"ES2023"
+		],
+		"noUncheckedSideEffectImports": true
+	},
+	"include": [
+		"vite.config.ts"
+	],
+	"extends": "./tsconfig.base.json"
+}

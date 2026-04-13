@@ -1,0 +1,27 @@
+{
+	"compilerOptions": {
+		"allowJs": true,
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"jsx": "react-jsx",
+		"lib": [
+			"ES2023",
+			"DOM",
+			"DOM.Iterable"
+		],
+		"noImplicitAny": true,
+		"removeComments": false,
+		"resolveJsonModule": true,
+		"sourceMap": true,
+		"useDefineForClassFields": true
+	},
+	"include": [
+		"src/client",
+		"src/shared"
+	],
+	"exclude": [
+		"node_modules"
+	],
+	"extends": "./tsconfig.base.json"
+}

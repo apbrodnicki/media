@@ -1,0 +1,31 @@
+{
+	"compilerOptions": {
+		"allowImportingTsExtensions": true,
+		"baseUrl": "./",
+		"composite": true,
+		"isolatedModules": true,
+		"module": "esnext",
+		"moduleDetection": "force",
+		"moduleResolution": "bundler",
+		"noEmit": true,
+		"noFallthroughCasesInSwitch": true,
+		"noUncheckedSideEffectImports": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"paths": {
+			"@shared/*": [
+				"src/shared/*"
+			],
+			"@client/*": [
+				"src/client/*"
+			],
+			"@worker/*": [
+				"src/worker/*"
+			]
+		},
+		"skipLibCheck": true,
+		"strict": true,
+		"target": "es2023",
+		"tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo"
+	}
+}
