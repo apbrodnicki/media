@@ -1,11 +1,12 @@
-import { Box, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
+import { CenteredBox } from '../custom/Styles';
 
 export const Header = (): React.JSX.Element => {
 	return (
-		<Box>
+		<CenteredBox>
 			<Typography>
-				The Lord of the Rings
+				Media Archive
 			</Typography>
-		</Box>
+		</CenteredBox>
 	);
 };
