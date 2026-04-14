@@ -1,7 +1,6 @@
 {
 	"compilerOptions": {
 		"allowImportingTsExtensions": true,
-		"baseUrl": "./",
 		"composite": true,
 		"isolatedModules": true,
 		"module": "esnext",
@@ -14,13 +13,13 @@
 		"noUnusedParameters": true,
 		"paths": {
 			"@shared/*": [
-				"src/shared/*"
+				"./src/shared/*"
 			],
 			"@client/*": [
-				"src/client/*"
+				"./src/client/*"
 			],
 			"@worker/*": [
-				"src/worker/*"
+				"./src/worker/*"
 			]
 		},
 		"skipLibCheck": true,

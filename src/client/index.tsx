@@ -1,8 +1,8 @@
-import '@client/css/index.css';
 import { ThemeProvider } from '@mui/material';
 import { RouterProvider } from '@tanstack/react-router';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import './css/index.css';
 import { router } from './router';
 import { theme } from './theme';
 
