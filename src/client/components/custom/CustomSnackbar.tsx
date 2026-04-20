@@ -1,9 +1,9 @@
-import { SnackbarContext } from '@client/contexts/SnackbarContext';
+import { useSnackbar } from '@client/contexts/snackbar/SnackbarContext';
 import { Alert, Snackbar } from '@mui/material';
-import React, { useContext } from 'react';
+import React from 'react';
 
 export const CustomSnackbar = (): React.JSX.Element => {
-	const { snackbarOpen, setSnackbarOpen, snackbarMessage, snackbarColor } = useContext(SnackbarContext);
+	const { snackbarOpen, snackbarMessage, snackbarColor, setSnackbarOpen } = useSnackbar();
 
 	return (
 		<Snackbar

@@ -1,4 +1,4 @@
-import { SnackbarContext } from '@client/contexts/SnackbarContext';
+import { SnackbarProvider } from '@client/contexts/snackbar/SnackbarProvider';
 import type { CsvRecord } from '@client/models/models';
 import { Box } from '@mui/material';
 import { Outlet } from '@tanstack/react-router';
@@ -16,13 +16,9 @@ import { Header } from './runner/Header';
 export const App = (): React.JSX.Element => {
 	const [csvRecords, setCsvRecords] = useState<CsvRecord[]>([]);
 
-	const [snackbarOpen, setSnackbarOpen] = useState<boolean>(false);
-	const [snackbarMessage, setSnackbarMessage] = useState<string>('');
-	const [snackbarColor, setSnackbarColor] = useState<'success' | 'info' | 'warning' | 'error'>('info');
-
 	return (
 		<Box className='page-layout'>
-			<SnackbarContext.Provider value={{ snackbarOpen, setSnackbarOpen, snackbarMessage, setSnackbarMessage, snackbarColor, setSnackbarColor }}>
+			<SnackbarProvider>
 				<Header />
 				<Box sx={{ display: 'flex', flex: 1 }}>
 					<FileUpload setCsvRecords={setCsvRecords} />
@@ -40,7 +36,7 @@ export const App = (): React.JSX.Element => {
 				</Box>
 				<Footer />
 				<CustomSnackbar />
-			</SnackbarContext.Provider>
+			</SnackbarProvider>
 		</Box>
 	);
 };

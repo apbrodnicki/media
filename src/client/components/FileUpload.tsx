@@ -1,7 +1,8 @@
+import { useSnackbar } from '@client/contexts/snackbar/SnackbarContext';
 import { isImdbCsvRecordArray } from '@client/helper/helper';
 import type { CsvRecord, Genre, ImdbCsvRecord, Rating } from '@client/models/models';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
-import { Button, Typography } from '@mui/material';
+import { Button } from '@mui/material';
 import { parse, type CsvError } from 'csv-parse/browser/esm';
 import React, { type ChangeEvent } from 'react';
 
@@ -10,6 +11,8 @@ interface FileUploadProps {
 }
 
 export const FileUpload = ({ setCsvRecords }: FileUploadProps): React.JSX.Element => {
+	const { showSnackbar } = useSnackbar();
+
 	const handleFileUpload = (event: ChangeEvent<HTMLInputElement>): void => {
 		if (event.target.files !== null && event.target.files[0].type === 'text/csv') {
 			const reader = new FileReader();
@@ -42,7 +45,7 @@ export const FileUpload = ({ setCsvRecords }: FileUploadProps): React.JSX.Elemen
 
 							setCsvRecords(filteredRecords);
 						} else {
-							console.log('Make sure the .csv file came directly from the IMDB export.');
+							showSnackbar({ message: 'Make sure the .csv file came directly from the IMDB export.', severity: 'error' });
 						}
 					});
 				}
@@ -50,7 +53,7 @@ export const FileUpload = ({ setCsvRecords }: FileUploadProps): React.JSX.Elemen
 
 			reader.readAsText(event.target.files[0]);
 		} else {
-			console.log('Make sure you entered a .csv file.');
+			showSnackbar({ message: 'Make sure you entered a .csv file.', severity: 'error' });
 		}
 	};
 
@@ -60,7 +63,7 @@ export const FileUpload = ({ setCsvRecords }: FileUploadProps): React.JSX.Elemen
 			variant='contained'
 			startIcon={<CloudUploadIcon />}
 		>
-			<Typography>Upload File</Typography>
+			Upload File
 			<input
 				type='file'
 				accept='.csv'
