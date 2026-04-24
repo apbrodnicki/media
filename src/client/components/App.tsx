@@ -1,7 +1,8 @@
 import { SnackbarProvider } from '@client/contexts/snackbar/SnackbarProvider';
+import '@client/css/App.css';
 import '@client/css/Runner.css';
 import { routes } from '@client/models/routes';
-import { Box, Grid, Paper } from '@mui/material';
+import { Box, Grid, Paper, Typography } from '@mui/material';
 import { Link, Outlet, useLocation } from '@tanstack/react-router';
 import { CustomSnackbar } from './custom/CustomSnackbar';
 import { Footer } from './runner/Footer';
@@ -18,13 +19,15 @@ export const App = (): React.JSX.Element => {
 					{location.pathname === '/' ? (
 						<Grid container spacing={2} sx={{ width: '85%' }}>
 							{Object.values(routes).map(routeDefinition => (
-								<Link to={routeDefinition.path} key={routeDefinition.title}>
-									<Grid size={{ xs: 12, sm: 6 }}>
-										<Paper elevation={1}>
-											{routeDefinition.title}
+								<Grid size={{ xs: 12, md: 6 }} key={routeDefinition.title}>
+									<Link to={routeDefinition.path} className='link'>
+										<Paper elevation={1} sx={{ p: 5 }}>
+											<Typography>
+												{routeDefinition.title}
+											</Typography>
 										</Paper>
-									</Grid>
-								</Link>
+									</Link>
+								</Grid>
 							))}
 						</Grid>
 					) : (

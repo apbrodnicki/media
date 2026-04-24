@@ -22,6 +22,9 @@ export const theme = createTheme({
 		}
 	},
 	typography: {
-		fontFamily: 'Aniron'
+		fontFamily: 'Aniron',
+		allVariants: {
+			color: 'black'
+		}
 	}
 });
