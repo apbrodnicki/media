@@ -8,7 +8,7 @@ import { RatingsGauge } from './charts/RatingsGauge';
 import { RatingsVotesScatter } from './charts/RatingsVotesScatter';
 import { UserRatingsPie } from './charts/UserRatingsPie';
 import { CustomSnackbar } from './custom/CustomSnackbar';
-import { FileUpload } from './FileUpload';
+import { ImdbFileUpload } from './ImdbFileUpload';
 import { MoviesAndShowsDataGrid } from './MoviesAndShowsDataGrid';
 import { Footer } from './runner/Footer';
 import { Header } from './runner/Header';
@@ -21,7 +21,7 @@ export const App = (): React.JSX.Element => {
 			<SnackbarProvider>
 				<Header />
 				<Box sx={{ display: 'flex', flex: 1 }}>
-					<FileUpload setCsvRecords={setCsvRecords} />
+					<ImdbFileUpload setCsvRecords={setCsvRecords} />
 					{csvRecords.length > 0 && (
 						<>
 							<MoviesAndShowsDataGrid records={csvRecords} />

@@ -6,14 +6,14 @@ import { Button } from '@mui/material';
 import { parse, type CsvError } from 'csv-parse/browser/esm';
 import React, { type ChangeEvent } from 'react';
 
-interface FileUploadProps {
+interface ImdbFileUploadProps {
 	setCsvRecords: React.Dispatch<React.SetStateAction<CsvRecord[]>>;
 }
 
-export const FileUpload = ({ setCsvRecords }: FileUploadProps): React.JSX.Element => {
+export const ImdbFileUpload = ({ setCsvRecords }: ImdbFileUploadProps): React.JSX.Element => {
 	const { showSnackbar } = useSnackbar();
 
-	const handleFileUpload = (event: ChangeEvent<HTMLInputElement>): void => {
+	const handleImdbFileUpload = (event: ChangeEvent<HTMLInputElement>): void => {
 		if (event.target.files !== null && event.target.files[0].type === 'text/csv') {
 			const reader = new FileReader();
 
@@ -63,12 +63,12 @@ export const FileUpload = ({ setCsvRecords }: FileUploadProps): React.JSX.Elemen
 			variant='contained'
 			startIcon={<CloudUploadIcon />}
 		>
-			Upload File
+			Upload IMDB CSV File
 			<input
 				type='file'
 				accept='.csv'
 				hidden
-				onChange={handleFileUpload}
+				onChange={handleImdbFileUpload}
 			/>
 		</Button>
 	);
