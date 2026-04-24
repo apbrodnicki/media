@@ -1,7 +1,9 @@
-import { Box } from '@mui/material';
+import { CenteredBox } from '../custom/Styles';
 
 export const Footer = (): React.JSX.Element => {
 	return (
-		<Box>footer</Box>
+		<CenteredBox className='runner'>
+			Footer
+		</CenteredBox>
 	);
 };

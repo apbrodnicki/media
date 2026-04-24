@@ -3,7 +3,7 @@ import { CenteredBox } from '../custom/Styles';
 
 export const Header = (): React.JSX.Element => {
 	return (
-		<CenteredBox>
+		<CenteredBox className='runner'>
 			<Typography>
 				Media Archive
 			</Typography>
